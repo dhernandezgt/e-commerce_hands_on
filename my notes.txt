@@ -37,7 +37,15 @@ will show:
 
 ===========
 
-postgresql+psycopg2://auth_users:dbtest123@localhost:5432/auth_users
+Initialize, commit, and push
+
+git init
+git add .
+git status            # review what will be committed
+git commit -m "Initial commit: harness-course-build project"
+git branch -M main
+git remote add origin https://github.com/dhernandezgt/e-commerce_hands_on.git
+git push -u origin main
 
 =============
 
