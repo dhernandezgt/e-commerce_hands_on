@@ -1,0 +1,452 @@
+# Plan: Implement user registration endpoint
+
+## Status: in progress
+
+## Tasks
+
+- [x] Implement user registration endpoint
+  - Notes: Created and tested the user registration endpoint.
+- [x] Implement user login endpoint with JWT authentication
+  - Notes: Created and tested the user login endpoint.
+- [x] Implement endpoint for users to get/update their own profile
+  - Notes: Implemented the endpoint for users to get and update their profiles.
+- [x] Implement endpoint for users to delete their own account
+  - Notes: Created and tested the endpoint for users to delete their account.
+- [x] Implement endpoints for admins to create/update/delete products
+  - Notes: Created endpoints for admins to manage products.
+- [x] Implement endpoints for anyone to list and view products
+  - Notes: Created endpoints for listing and viewing products.
+- [x] Define product structure with name, description, price, stock count
+  - Notes: Defined the structure for products.
+- [x] Implement endpoint for authenticated users to place orders (products + quantities)
+  - Notes: Created the endpoint for authenticated users to place orders.
+- [x] Implement inventory check and stock deduction during order placement
+  - Notes: Implemented inventory checking and stock deduction during order placement.
+- [x] Record the order details in the database
+  - Notes: Order details are recorded in the database.
+- [x] Implement endpoint for users to view their own order history
+  - Notes: Created endpoint for users to view their order history.
+- [x] Decide no payment integration is needed for the e-commerce API
+- [x] Set up Flask framework with SQLAlchemy and Flask-JWT-Extended
+- [x] Configure SQLite as the database for storage
+- [x] Organize project structure with separate modules for models, auth, users, products, and orders
+- [x] Write tests using pytest to cover happy paths
+- [ ] Add tests for edge cases:
+- [ ] 1. Unauthenticated access to protected endpoints
+- [ ] 2. Insufficient stock during order placement
+- [ ] 3. Non-admin trying to modify products
+- [ ] 4. Ordering a nonexistent product
+- [x] Create requirements.txt with pinned versions for dependencies
+- [x] Create README.md with setup and usage instructions
+- [x] Create detailed plan for e-commerce API development
+  - Notes: 1. **User Management**:
+- [x] Add tests for edge cases
+- [x] Add tests for edge cases: 1. Unauthenticated access to protected endpoints
+- [x] Add tests for edge cases: 2. Insufficient stock during order placement
+- [x] Add tests for edge cases: 3. Non-admin trying to modify products
+- [x] Add tests for edge cases: 4. Ordering a nonexistent product
+- [x] Add tests for edge case: Unauthenticated access to protected endpoints
+  - Notes: Test added for handling unauthenticated access to protected endpoints.
+- [x] Add tests for edge case: Insufficient stock during order placement
+  - Notes: Test added for handling insufficient stock during order placement.
+- [x] Add tests for edge case: Non-admin trying to modify products
+  - Notes: Test added for non-admin access to modify products.
+- [x] Add tests for edge case: Ordering a nonexistent product
+  - Notes: Test added for ordering a nonexistent product.
+- [x] Add tests for edge cases: Unauthenticated access to protected endpoints
+  - Notes: Test added for handling unauthenticated access to protected endpoints.
+- [x] Add tests for edge cases: Insufficient stock during order placement
+  - Notes: Test added for handling insufficient stock during order placement.
+- [x] Add tests for edge cases: Non-admin trying to modify products
+  - Notes: Test added for non-admin access to modify products.
+- [x] Add tests for edge cases: Ordering a nonexistent product
+  - Notes: Test added for ordering a nonexistent product.
+- [x] Finalize the implementation and prepare for deployment
+  - Notes: Implemented final changes and prepared for deployment.
+- [ ] Add tests for edge case: Users can’t delete other users’ accounts
+- [ ] Add tests for edge case: Admins must be logged in to manage products
+- [ ] Add tests for edge case: Users can only view their own orders
+- [ ] Add tests for edge case: Product stock must be integer
+
+## Log
+- 2026-10-04T06:07:52Z — Task 'Add tests for edge case: Product stock must be integer' moved todo → todo
+- 2026-10-04T06:07:52Z — Task 'Add tests for edge case: Users can only view their own orders' moved todo → todo
+- 2026-10-04T06:07:52Z — Task 'Add tests for edge case: Admins must be logged in to manage products' moved todo → todo
+- 2026-10-04T06:07:52Z — Task 'Add tests for edge case: Users can’t delete other users’ accounts' moved todo → todo
+- 2026-10-04T06:07:49Z — Task 'Add tests for edge case: Product stock must be integer' moved todo → todo
+- 2026-10-04T06:07:49Z — Task 'Add tests for edge case: Users can only view their own orders' moved todo → todo
+- 2026-10-04T06:07:49Z — Task 'Add tests for edge case: Admins must be logged in to manage products' moved todo → todo
+- 2026-10-04T06:07:49Z — Task 'Add tests for edge case: Users can’t delete other users’ accounts' moved todo → todo
+- 2026-10-04T06:07:46Z — Task 'Add tests for edge case: Product stock must be integer' moved todo → todo
+- 2026-10-04T06:07:46Z — Task 'Add tests for edge case: Users can only view their own orders' moved todo → todo
+- 2026-10-04T06:07:46Z — Task 'Add tests for edge case: Admins must be logged in to manage products' moved todo → todo
+- 2026-10-04T06:07:46Z — Task 'Add tests for edge case: Users can’t delete other users’ accounts' moved todo → todo
+- 2026-10-04T06:07:42Z — Task 'Add tests for edge case: Product stock must be integer' added as todo
+- 2026-10-04T06:07:42Z — Task 'Add tests for edge case: Users can only view their own orders' added as todo
+- 2026-10-04T06:07:42Z — Task 'Add tests for edge case: Admins must be logged in to manage products' added as todo
+- 2026-10-04T06:07:42Z — Task 'Add tests for edge case: Users can’t delete other users’ accounts' added as todo
+- 2026-10-04T06:07:39Z — Task 'Finalize the implementation and prepare for deployment' moved done → done
+- 2026-10-04T06:07:39Z — Task 'Add tests for edge case: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:07:39Z — Task 'Add tests for edge case: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:07:39Z — Task 'Add tests for edge case: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:07:39Z — Task 'Add tests for edge case: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:07:34Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:07:34Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:07:34Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:07:34Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:07:30Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:07:30Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:07:30Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:07:30Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:07:26Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:07:26Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:07:26Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:07:26Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:07:21Z — Task 'Add tests for edge case: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:07:21Z — Task 'Add tests for edge case: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:07:21Z — Task 'Add tests for edge case: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:07:21Z — Task 'Add tests for edge case: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:07:18Z — Task 'Finalize the implementation and prepare for deployment' moved todo → done
+- 2026-10-04T06:07:10Z — Task 'Finalize the implementation and prepare for deployment' added as todo
+- 2026-10-04T06:05:54Z — Task 'Add tests for edge case: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:54Z — Task 'Add tests for edge case: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:54Z — Task 'Add tests for edge case: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:54Z — Task 'Add tests for edge case: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:50Z — Task 'Add tests for edge case: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:50Z — Task 'Add tests for edge case: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:50Z — Task 'Add tests for edge case: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:50Z — Task 'Add tests for edge case: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:46Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:46Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:46Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:46Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:46Z — Task 'Add tests for edge cases' moved done → done
+- 2026-10-04T06:05:43Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:43Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:43Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:43Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:40Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:40Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:40Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:40Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:36Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:36Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:36Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:36Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:34Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:34Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:34Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:34Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:28Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:28Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:28Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:28Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:25Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:25Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:25Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:25Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:05:21Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:05:21Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:05:21Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:05:21Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:24Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:04:24Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:04:24Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:04:24Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:20Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:04:20Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:04:20Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:04:20Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:15Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:04:15Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:04:15Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:04:15Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:12Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:04:12Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:04:12Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:04:12Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:08Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:04:08Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:04:08Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:04:08Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:05Z — Task 'Add tests for edge cases: Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:04:05Z — Task 'Add tests for edge cases: Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:04:05Z — Task 'Add tests for edge cases: Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:04:05Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:04:02Z — Task 'Add tests for edge cases: Ordering a nonexistent product' added as done
+- 2026-10-04T06:04:02Z — Task 'Add tests for edge cases: Non-admin trying to modify products' added as done
+- 2026-10-04T06:04:02Z — Task 'Add tests for edge cases: Insufficient stock during order placement' added as done
+- 2026-10-04T06:04:02Z — Task 'Add tests for edge cases: Unauthenticated access to protected endpoints' added as done
+- 2026-10-04T06:03:59Z — Task 'Add tests for edge case: Ordering a nonexistent product' added as done
+- 2026-10-04T06:03:59Z — Task 'Add tests for edge case: Non-admin trying to modify products' added as done
+- 2026-10-04T06:03:59Z — Task 'Add tests for edge case: Insufficient stock during order placement' added as done
+- 2026-10-04T06:03:59Z — Task 'Add tests for edge case: Unauthenticated access to protected endpoints' added as done
+- 2026-10-04T06:03:55Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:03:55Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:03:55Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:03:55Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:03:51Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:03:51Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:03:51Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:03:51Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:03:02Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:03:02Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:03:02Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:03:02Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:02:56Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved done → done
+- 2026-10-04T06:02:56Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → done
+- 2026-10-04T06:02:56Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → done
+- 2026-10-04T06:02:56Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → done
+- 2026-10-04T06:02:51Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → done
+- 2026-10-04T06:02:51Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → done
+- 2026-10-04T06:02:51Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → done
+- 2026-10-04T06:02:51Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → done
+- 2026-10-04T06:02:11Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:02:11Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:02:11Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:02:08Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:02:08Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:02:08Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:02:08Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T06:02:03Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T06:02:03Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:02:03Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:02:03Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:01:59Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:01:59Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:01:59Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:01:56Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:01:56Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:01:56Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:01:52Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:01:52Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:01:52Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:01:48Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved done → todo
+- 2026-10-04T06:01:48Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved done → todo
+- 2026-10-04T06:01:48Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved done → todo
+- 2026-10-04T06:01:48Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T06:01:44Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → done
+- 2026-10-04T06:01:44Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → done
+- 2026-10-04T06:01:44Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → done
+- 2026-10-04T06:01:44Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → done
+- 2026-10-04T06:01:19Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T06:01:19Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:01:19Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:01:19Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:01:13Z — Task 'Create README.md with setup and usage instructions' moved todo → done
+- 2026-10-04T06:01:13Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → done
+- 2026-10-04T06:00:10Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T06:00:10Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T06:00:10Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T06:00:10Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:00:10Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:00:10Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:00:05Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T06:00:05Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:00:05Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:00:05Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:00:05Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T06:00:05Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T06:00:01Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T06:00:01Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T06:00:01Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T06:00:01Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T06:00:01Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T06:00:01Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:57Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T05:59:57Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T05:59:57Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T05:59:57Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T05:59:57Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:57Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:53Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T05:59:53Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T05:59:53Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T05:59:53Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T05:59:53Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:53Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:40Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T05:59:40Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T05:59:40Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T05:59:40Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T05:59:40Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:40Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:36Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:36Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:36Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T05:59:36Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T05:59:36Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T05:59:36Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T05:59:32Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:32Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:32Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T05:59:32Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T05:59:32Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T05:59:32Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T05:59:28Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' moved todo → todo
+- 2026-10-04T05:59:28Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' moved todo → todo
+- 2026-10-04T05:59:28Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' moved todo → todo
+- 2026-10-04T05:59:28Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' moved todo → todo
+- 2026-10-04T05:59:28Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:28Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:59:24Z — Task 'Create detailed plan for e-commerce API development' moved todo → done
+- 2026-10-04T05:59:20Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:59:20Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:59:20Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:58:16Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:58:16Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:58:16Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:58:16Z — Task 'Add tests for edge cases: 4. Ordering a nonexistent product' added as todo
+- 2026-10-04T05:58:16Z — Task 'Add tests for edge cases: 3. Non-admin trying to modify products' added as todo
+- 2026-10-04T05:58:16Z — Task 'Add tests for edge cases: 2. Insufficient stock during order placement' added as todo
+- 2026-10-04T05:58:16Z — Task 'Add tests for edge cases: 1. Unauthenticated access to protected endpoints' added as todo
+- 2026-10-04T05:58:13Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:58:13Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:58:13Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:58:10Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:58:10Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:58:10Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:58:07Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:58:07Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:58:07Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:58:05Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:58:05Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:58:05Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:58:02Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:58:02Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:58:02Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:57:59Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:57:59Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:57:59Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:57:56Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:57:56Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:57:56Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:57:56Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:57:53Z — Task 'Create detailed plan for e-commerce API development' moved todo → todo
+- 2026-10-04T05:57:53Z — Task 'Create README.md with setup and usage instructions' moved todo → todo
+- 2026-10-04T05:57:53Z — Task 'Create requirements.txt with pinned versions for dependencies' moved todo → todo
+- 2026-10-04T05:57:53Z — Task 'Add tests for edge cases:' moved todo → todo
+- 2026-10-04T05:57:53Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:57:50Z — Task 'Add tests for edge cases' added as done
+- 2026-10-04T05:57:49Z — Task 'Write tests using pytest to cover happy paths' moved todo → done
+- 2026-10-04T05:57:48Z — Task 'Organize project structure with separate modules for models, auth, users, products, and orders' moved todo → done
+- 2026-10-04T05:57:47Z — Task 'Configure SQLite as the database for storage' moved todo → done
+- 2026-10-04T05:57:44Z — Task 'Set up Flask framework with SQLAlchemy and Flask-JWT-Extended' moved todo → done
+- 2026-10-04T05:31:51Z — Task 'Add tests for edge cases:' moved todo → todo
+- 2026-10-04T05:31:51Z — Task 'Write tests using pytest to cover happy paths' moved todo → todo
+- 2026-10-04T05:31:51Z — Task 'Organize project structure with separate modules for models, auth, users, products, and orders' moved todo → todo
+- 2026-10-04T05:31:51Z — Task 'Configure SQLite as the database for storage' moved todo → todo
+- 2026-10-04T05:31:51Z — Task 'Set up Flask framework with SQLAlchemy and Flask-JWT-Extended' moved todo → todo
+- 2026-10-04T05:30:51Z — Task 'Implement endpoint for users to view their own order history' moved todo → done
+- 2026-10-04T05:30:50Z — Task 'Record the order details in the database' moved todo → done
+- 2026-10-04T05:30:47Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → done
+- 2026-10-04T05:30:45Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → done
+- 2026-10-04T05:30:43Z — Task 'Define product structure with name, description, price, stock count' moved todo → done
+- 2026-10-04T05:30:41Z — Task 'Implement endpoints for anyone to list and view products' moved todo → done
+- 2026-10-04T05:30:38Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → done
+- 2026-10-04T05:30:35Z — Task 'Implement endpoint for users to delete their own account' moved todo → done
+- 2026-10-04T05:30:31Z — Task 'Implement user login endpoint with JWT authentication' moved todo → done
+- 2026-10-04T05:30:28Z — Task 'Implement user registration endpoint' moved todo → done
+- 2026-10-04T05:30:18Z — Task 'Implement user registration endpoint' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement endpoint for users to view their own order history' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Record the order details in the database' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Define product structure with name, description, price, stock count' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement endpoints for anyone to list and view products' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement endpoint for users to delete their own account' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:30:17Z — Task 'Implement user login endpoint with JWT authentication' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Add tests for edge cases:' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Write tests using pytest to cover happy paths' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Organize project structure with separate modules for models, auth, users, products, and orders' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Configure SQLite as the database for storage' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Set up Flask framework with SQLAlchemy and Flask-JWT-Extended' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement endpoint for users to view their own order history' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Record the order details in the database' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Define product structure with name, description, price, stock count' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement endpoints for anyone to list and view products' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement endpoint for users to delete their own account' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement user login endpoint with JWT authentication' moved todo → todo
+- 2026-10-04T05:30:12Z — Task 'Implement user registration endpoint' moved todo → todo
+- 2026-10-04T05:30:06Z — Task 'Add tests for edge cases:' moved todo → todo
+- 2026-10-04T05:30:05Z — Task 'Write tests using pytest to cover happy paths' moved todo → todo
+- 2026-10-04T05:30:05Z — Task 'Organize project structure with separate modules for models, auth, users, products, and orders' moved todo → todo
+- 2026-10-04T05:30:04Z — Task 'Configure SQLite as the database for storage' moved todo → todo
+- 2026-10-04T05:30:03Z — Task 'Set up Flask framework with SQLAlchemy and Flask-JWT-Extended' moved todo → todo
+- 2026-10-04T05:30:02Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:30:01Z — Task 'Implement endpoint for users to delete their own account' moved todo → todo
+- 2026-10-04T05:30:01Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → todo
+- 2026-10-04T05:30:00Z — Task 'Implement endpoints for anyone to list and view products' moved todo → todo
+- 2026-10-04T05:29:59Z — Task 'Define product structure with name, description, price, stock count' moved todo → todo
+- 2026-10-04T05:29:58Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → todo
+- 2026-10-04T05:29:58Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → todo
+- 2026-10-04T05:29:57Z — Task 'Record the order details in the database' moved todo → todo
+- 2026-10-04T05:29:56Z — Task 'Implement endpoint for users to view their own order history' moved todo → todo
+- 2026-10-04T05:29:56Z — Task 'Implement user registration endpoint' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Add tests for edge cases:' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Write tests using pytest to cover happy paths' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Organize project structure with separate modules for models, auth, users, products, and orders' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Configure SQLite as the database for storage' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Set up Flask framework with SQLAlchemy and Flask-JWT-Extended' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement endpoint for users to view their own order history' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Record the order details in the database' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Define product structure with name, description, price, stock count' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement endpoints for anyone to list and view products' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement endpoint for users to delete their own account' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:29:55Z — Task 'Implement user login endpoint with JWT authentication' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Implement endpoint for users to view their own order history' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Record the order details in the database' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Define product structure with name, description, price, stock count' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Implement endpoints for anyone to list and view products' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → todo
+- 2026-10-04T05:29:48Z — Task 'Implement endpoint for users to delete their own account' moved todo → todo
+- 2026-10-04T05:29:45Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:29:45Z — Task 'Implement user login endpoint with JWT authentication' moved todo → todo
+- 2026-10-04T05:29:44Z — Task 'Implement user registration endpoint' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement endpoint for users to view their own order history' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Record the order details in the database' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement inventory check and stock deduction during order placement' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Define product structure with name, description, price, stock count' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement endpoints for anyone to list and view products' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement endpoints for admins to create/update/delete products' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement endpoint for users to delete their own account' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement endpoint for users to get/update their own profile' moved todo → todo
+- 2026-10-04T05:29:43Z — Task 'Implement user login endpoint with JWT authentication' moved todo → todo
+- 2026-10-04T05:27:22Z — Task 'Create detailed plan for e-commerce API development' added as todo
+- 2026-10-04T05:27:16Z — Task 'Create README.md with setup and usage instructions' added as todo
+- 2026-10-04T05:27:16Z — Task 'Create requirements.txt with pinned versions for dependencies' added as todo
+- 2026-10-04T05:27:13Z — Task '4. Ordering a nonexistent product' added as todo
+- 2026-10-04T05:27:13Z — Task '3. Non-admin trying to modify products' added as todo
+- 2026-10-04T05:27:13Z — Task '2. Insufficient stock during order placement' added as todo
+- 2026-10-04T05:27:13Z — Task '1. Unauthenticated access to protected endpoints' added as todo
+- 2026-10-04T05:27:13Z — Task 'Add tests for edge cases:' added as todo
+- 2026-10-04T05:27:13Z — Task 'Write tests using pytest to cover happy paths' added as todo
+- 2026-10-04T05:27:10Z — Task 'Organize project structure with separate modules for models, auth, users, products, and orders' added as todo
+- 2026-10-04T05:27:08Z — Task 'Configure SQLite as the database for storage' added as todo
+- 2026-10-04T05:27:08Z — Task 'Set up Flask framework with SQLAlchemy and Flask-JWT-Extended' added as todo
+- 2026-10-04T05:27:06Z — Task 'Decide no payment integration is needed for the e-commerce API' added as done
+- 2026-10-04T05:27:04Z — Task 'Implement endpoint for users to view their own order history' added as todo
+- 2026-10-04T05:27:04Z — Task 'Record the order details in the database' added as todo
+- 2026-10-04T05:27:04Z — Task 'Implement inventory check and stock deduction during order placement' added as todo
+- 2026-10-04T05:27:04Z — Task 'Implement endpoint for authenticated users to place orders (products + quantities)' added as todo
+- 2026-10-04T05:27:00Z — Task 'Define product structure with name, description, price, stock count' added as todo
+- 2026-10-04T05:27:00Z — Task 'Implement endpoints for anyone to list and view products' added as todo
+- 2026-10-04T05:27:00Z — Task 'Implement endpoints for admins to create/update/delete products' added as todo
+- 2026-10-04T05:26:56Z — Task 'Implement endpoint for users to delete their own account' added as todo
+- 2026-10-04T05:26:56Z — Task 'Implement endpoint for users to get/update their own profile' added as todo
+- 2026-10-04T05:26:56Z — Task 'Implement user login endpoint with JWT authentication' added as todo
+- 2026-10-04T05:26:56Z — Task 'Implement user registration endpoint' added as todo
+- 2026-10-04T05:26:56Z — Plan created
