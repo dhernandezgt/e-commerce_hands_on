@@ -1,0 +1,50 @@
+If you want to clone the repository and then work with its branches, I recommend this:
+
+    cd ~/Documents
+    git clone https://github.com/coderonfleek/harness-course-build.git
+    cd harness-course-build
+
+- Now verify:
+
+    git status
+
+You should see something like:
+
+    On branch main
+    Your branch is up to date with 'origin/main'.
+
+See all branches
+    git branch -a
+
+If you want to work on another branch
+
+Suppose you see:
+
+    remotes/origin/chapter-2
+
+Create a local branch that tracks it:
+
+    git switch --track origin/chapter-2
+
+Then:
+
+    git branch
+
+will show:
+
+      main
+    * chapter-2
+
+===========
+
+postgresql+psycopg2://auth_users:dbtest123@localhost:5432/auth_users
+
+=============
+
+I want to build a FastAPI hello and health check APP.
+
+- Framework: UV environment + FastAPI
+- Structure: proper project layout with separate modules 
+- Docs: requirements.txt with pinned versions, README with setup and usage
+
+Before writing any code, draw up a detailed plan in plan.md — one task per meaningful piece of work — so I can review. DO NOT start executing yet.
